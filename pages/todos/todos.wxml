@@ -1,0 +1,29 @@
+<view class="container">
+	<view class="header">
+		<image src="../../images/add.png" bindtap="addTodoHandler"></image>
+		<input type="text" placeholder="Anything here" value="{{input}}" bindinput="inputChangeHandler"
+		bindconfirm="addTodoHandler"/>
+		<!-- bindconfirm是实现回车按钮添加列表 -->
+	</view>
+	<!-- block只是一个空白载体 -->
+	<block wx:if="{{todos.length}}">
+		<view class="todos">
+			<view class="item{{item.completed?' completed':''}}" wx:for="{{todos}}" wx:key="{{index}}" bindtap="toggleTodoHandler" data-index="{{index}}">
+				<icon type="{{item.completed?'success':'circle'}}" ></icon>
+				<text>{{item.name}}</text>
+				<!--此处用catchtap绑定是是因为用bindtap会有冒泡的问题-->
+				<icon type="clear" size="16" catchtap="removeTodoHandler" data-index="{{index}}"></icon>
+			</view>
+		</view>
+		<view class="footer">
+			<text bindtap="toggleAllHandler">Toggle all</text>
+			<text wx:if="{{leftCount}}">{{leftCount}} {{leftCount>1?"items":"item"}} left</text>
+			<text bindtap="clearCompletedHandler">Clear Completed</text>
+		</view>
+	</block>
+	<view wx:else>
+		<text>无任务</text>
+	</view>
+
+</view>
+

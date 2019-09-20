@@ -1,0 +1,58 @@
+/* pages/todos/todos.wxss */
+.container{
+	border-top: 1rpx solid #e0e0e0;
+}
+
+.header{
+	display: flex;
+	align-items: center; 
+	border: 1rpx solid #e0e0e0;
+	margin: 20rpx;
+	border-radius: 5rpx;
+	box-shadow: 0 0 5rpx #e0e0e0;
+	padding: 10rpx;
+}
+
+.header image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 15rpx;
+}
+.todos{
+	margin: 20rpx;
+	border: 1rpx solid #e0e0e0;
+	border-radius: 5rpx;
+	box-shadow: 0 0 5rpx #e0e0e0;
+	padding: 10rpx;
+}
+.todos .item{
+	display: flex;
+	align-items: center;
+	padding: 20rpx;
+	border-bottom: 1rpx solid #e0e0e0;
+}
+.todos .item:last-child{
+	border-bottom: 0;
+}
+.todos .item text{
+	flex:1;
+	font-size: 32rpx;
+	color: #555;
+	margin-left: 20rpx;
+}
+.todos .completed text{
+	flex:1;
+	font-size: 32rpx;
+	color: #888;
+	margin-left: 20rpx;
+	text-decoration:line-through;
+}
+.footer{
+	font-size: 32rpx;
+	justify-content: space-between;
+	margin:20rpx;
+	display: flex;
+	color: #333;
+}
+
+
